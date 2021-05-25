@@ -1,0 +1,20 @@
+// Program by Yogesh Deolalkar
+class Solution {
+    public int[] countBits(int num) {
+        int res[]=new int[num+1];
+        for(int i=0;i<=num;i++)
+        {
+            int ans=findBits(i);
+            res[i]=ans;
+        }
+        return res;
+    }
+  static int findBits(int i){
+    int count=0;
+    while(i>0){
+      i=i&(i-1);
+      count++;
+    }
+    return count;
+  }
+}
