@@ -1,0 +1,23 @@
+
+class Solution 
+{
+    public int heightChecker(int[] heights) 
+    {
+       int l=heights.length;
+      int originalArray[]=new int[l];
+      for(int i=0;i<l;i++){
+        originalArray[i]=heights[i];
+      }
+      int count=0;
+      Arrays.sort(heights);
+      for(int i=0;i<l;i++)
+      {
+        if(heights[i]!=originalArray[i])
+        {
+          count++;
+        }
+      }
+      return count;
+    }
+}
+// Yogesh Deolalkar
