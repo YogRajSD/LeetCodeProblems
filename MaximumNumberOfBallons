@@ -1,0 +1,21 @@
+class Solution {
+    public int maxNumberOfBalloons(String text) {
+        int ans=0;
+        // / Finding the frequency of letters
+        int bfrequency=0,afrequency=0,lfrequency=0,ofrequency=0,nfrequency=0;
+        
+        for(int i=0;i<text.length();i++)
+        {
+            char ch=text.charAt(i);
+            if(ch=='b') bfrequency++;
+            else if(ch=='a') afrequency++;
+            else if(ch=='l') lfrequency++;
+            else if(ch=='o') ofrequency++;
+            else if(ch=='n') nfrequency++;
+        }
+        lfrequency=lfrequency/2;
+        ofrequency=ofrequency/2;
+        ans=Math.min(afrequency,Math.min(lfrequency,ofrequency));
+        return ans;
+    }
+}
